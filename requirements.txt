@@ -23,5 +23,4 @@ tqdm==4.62.3
 Werkzeug==2.0.2
 gunicorn
 urlopen
-TfidfVectorizer
 MultinomialNB
