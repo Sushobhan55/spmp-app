@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+	<title>Stock Sentiment Analysis</title>
+	  <style> body {background: powderblue
+	  				url("https://raw.githubusercontent.com/Sushobhan55/stock_sentiment_analysis/main/flask-web-app/static/img.png")
+	  				no-repeat right top;}
+	  	table {float: left; width: 65%; overflow-y:scroll; height:280px; display:block;}
+		h1 {color: green; font-family: "audiowide"; font-size: 50px}
+		th, td {border: 1px solid white;border-radius: 5px;background-color: #96D4D4}
+		.alert {padding: 20px; background-color: #f44336; border-radius: 20px; margin-bottom: 15px;}
+		ul {list-style-type: none; margin: 0; padding: 0; width: 200px; background-color: #f1f1f1;}
+		li a {text-align: center; display: block; color: #000; padding: 8px 16px; text-decoration: none;}
+		li a.active {background-color: #04AA6D; color: white;}
+		li a:hover:not(.active) {background-color: #555; color: white;}
+	  </style>
+</head>
+  <body class = "center-screen">
+  <ul>
+	  <li><a class="active" href="{{ url_for('main') }}">Predictor</a></li>
+	  <li><a href="/contacts/">Contacts</a></li>
+	  <li><a href="/about/">About</a></li>
+  </ul>
+	  <h1> Stock Price Movement Predictor </h1>
+		<form action="{{ url_for('main') }}" method="POST">
+			<fieldset>
+	        <legend><b>Input Stock:</b></legend>
+	        Type your stock ticker in here:
+				<input name="ticker" type="text" autocomplete = "off" required>
+				<input type="submit" value="Submit">
+			</fieldset>
+		</form>
+
+		{% if table %}
+			<table>
+				<caption><h3>Today's data for {{ input_text }}</h3></caption>
+				<tr>
+					{% for header in headings %}
+					<th>{{ header }}</th>
+					{% endfor %}
+				</tr>
+				{% for row in table %}
+				<tr>
+					<td><small>{{ row[0] }}</small></td>
+					<td><small>{{ row[1] }}</small></td>
+					<td><small><a href = {{ row[3] }}>{{ row[2] }}</a></small></td>
+					<td><small>{{ row[4] }}</small></td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		<div align="center">
+			<p style="color:black;">Total number of news on {{input_text}} : {{total}}</p>
+			<p style="color:green;">News that indicate upward movement : {{ups}}</p>
+			<p style="color:red;">News that indicate downward movement : {{downs}}</p>
+
+		</div>
+
+		{% endif %}
+
+		{% if error %}
+		<div class="alert">
+			<big>{{ error }}</big>
+		</div>
+		{% endif %}
+
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <title>Contacts</title>
+    <style> body {background: powderblue
+                    url("https://raw.githubusercontent.com/Sushobhan55/stock_sentiment_analysis/main/flask-web-app/static/img.png")
+	  				no-repeat right top;}
+    ul {list-style-type: none; margin: 0; padding: 0; width: 200px; background-color: #f1f1f1;}
+	li a {text-align: center; display: block; color: #000; padding: 8px 16px; text-decoration: none;}
+	li a.active {background-color: #04AA6D; color: white;}
+	li a:hover:not(.active) {background-color: #555; color: white;}
+	img {border: 1px solid black; border-radius: 10px; padding: 5px; width: 200px; height: 230px}
+    .container {width: 60%; margin: 0 auto;}
+    </style>
+</head>
+
+<body class = "center-screen">
+    <ul>
+	  <li><a href="{{ url_for('main') }}">Predictor</a></li>
+	  <li><a class="active" href="/contacts/">Contacts</a></li>
+	  <li><a href="/about/">About</a></li>
+    </ul>
+
+    <div class="container">
+        <div style="float:left;">
+            <center><img src="../static/Sushobhan_Parajuli.jpg"></center>
+            <a href="https://sushobhan55.github.io/"><h3 align ="center">Sushobhan Parajuli</h3></a>
+            <h5 align="center">BA in Mathematics</h5>
+            <h5 align="center">CUNY Baruch College</h5>
+            <center>
+                <a href="https://www.linkedin.com/in/sparajuli/"><input type="image" class="mr-2" height="65px" src="../static/linkedin.png" alt="Open Link"/></a>
+                <a href="https://github.com/Sushobhan55"><input type="image" class="mr-3" height="65px" src="../static/github.png" alt="Open Link"/></a>
+            </center>
+        </div>
+
+        <div style="float:right;">
+            <center><img src="../static/Danny_Zhen.jpg"></center>
+            <a href="https://dannyzhen2000.github.io/"><h3 align = "center">Danny Zhen</h3></a>
+            <h5 align ="center">BBA in Statistics & Quantitative Modeling</h5>
+            <h5 align ="center">CUNY Baruch College</h5>
+            <center>
+                <a href="https://www.linkedin.com/in/dannyzhen/"><input type="image" height="65px" src="../static/linkedin.png" alt="Open Link"/></a>
+                <a href="https://github.com/dannyzhen2000"><input type="image" height="65px" src="../static/github.png" alt="Open Link"/></a>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

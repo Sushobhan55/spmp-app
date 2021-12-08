@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <title>About</title>
+    <style> body {background: powderblue
+                    url("https://raw.githubusercontent.com/Sushobhan55/stock_sentiment_analysis/main/flask-web-app/static/img.png")
+	  				no-repeat right top;}
+    ul {list-style-type: none; margin: 0; padding: 0; width: 200px; background-color: #f1f1f1;}
+	li a {text-align: center; display: block; color: #000; padding: 8px 16px; text-decoration: none;}
+	li a.active {background-color: #04AA6D; color: white;}
+	li a:hover:not(.active) {background-color: #555; color: white;}
+    .container {width: 90%; margin: 0 auto;}
+    </style>
+</head>
+
+<body class = "center-screen">
+    <ul>
+	  <li><a href="{{ url_for('main') }}">Predictor</a></li>
+	  <li><a href="/contacts/">Contacts</a></li>
+	  <li><a class ="active" href="/about/">About</a></li>
+    </ul>
+    <br>
+    <div class="container">
+        <p>Stock Price Movement Predictor is solely modeled and designed for learning purpose. We do not guarantee anyone that using our app will make them profit. Stock Price Movement, to a great extent, is a random process and myriad of factors affect this movement, not just stock news headlines.
+            Having said so, studying the effect of news in stock price is vital as it significantly impacts investors sentiment. For example, a news headline like "Apple's iPhone 13 production fell 20% in Sept-Oct" conveys a negative outlook on the company Apple Inc. Following such news, investors
+            will have a negative sentiment around Apple. Stock news are tremendously available and easily accessibly in today's digital era. Every investor or trader keeps an eye on stock news. Such news carry opinions of various stakeholders and different metrics about the company. Soon, news items are transformed into investors sentiment and that drives the stock price.
+        <p>Stock Price Movement Predictor utilizes more than <a href = "https://www.kaggle.com/miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests">337,000 news headlines related to S&P 500 listed companies from 2009 to 2020</a>. We used Natural Language Processing to classify those news headlines according to the stock price movement of corresponding dates and trained our model in machine learning algorithms varying form multinomial naive bayes to neural networks. We have selected our best performing model. We have used the following python packages in the course of building our model:
+        <li>Numpy</li><li>Pandas</li><li>Nltk</li><li>Scikit-Learn</li>
+        <li>TensorFlow</li><li>Yahoo Finance API</li><li>Beautiful Soup</li>
+        <p>We utilized following technologies to build our web application and deploy it:
+        <li>Flask</li><li>HTML</li><li>CSS</li><li>Heroku</li><li>Git</li>
+        </p>
+
+    </div>
+
+</body>
+</html>
