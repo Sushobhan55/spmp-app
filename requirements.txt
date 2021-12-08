@@ -9,3 +9,4 @@ scikit-learn==1.0.1
 sklearn==0.0
 gunicorn
 urlopen
+Request
