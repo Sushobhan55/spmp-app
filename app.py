@@ -34,7 +34,6 @@ def main():
             news_table = html.find(id='news-table')
 
             parsed_news = []
-            text_clean = []
             for row in news_table.findAll('tr'):
                 text = row.a.text
                 date_data = row.td.text.split(' ')
@@ -75,7 +74,7 @@ def main():
                                     total=total, ups=ups, downs=downs)
 
         except Exception as e:
-            #e = "Message: No news on "+ ticker.upper() +" has been published yet."
+            e = "Message: No news on "+ ticker.upper() +" has been published yet."
             return flask.render_template('index.html',
                                          error=e)
 
