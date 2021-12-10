@@ -9,6 +9,7 @@ import time
 todays_date = time.strftime("%b-%d-%y")
 
 app = flask.Flask(__name__, template_folder='templates')
+
 path_to_vectorizer = 'models/vectorizer.pkl'
 path_to_classifier = 'models/movement-classifier.pkl'
 
