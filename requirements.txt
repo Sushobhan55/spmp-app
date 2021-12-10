@@ -11,6 +11,4 @@ gunicorn==20.0.4
 requests==2.25.0
 urlopen
 urllib3==1.25.10
-soupsieve==2.0.1
-pretty-html-table==0.9.dev0
 
