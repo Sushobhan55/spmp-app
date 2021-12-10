@@ -36,7 +36,7 @@ def main():
             prediction = model.predict(X)
             predictions.append(prediction)
 
-            df["prediction"] = predictions[0]
+            df["prediction"] = predictions[0].tolist()
 
             ups = df["prediction"].value_counts()["Up"]
             downs = df["prediction"].value_counts()["Down"]
